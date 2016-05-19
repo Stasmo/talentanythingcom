@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Talent ANYTHING</title>
+    <meta property="og:title" content="We're as serious as anybody out there." />
+    <meta property="og:site_name" content="Talent Anything"/>
+    <meta property="og:description" content="" />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Lobster' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/test.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="vid-container">
+        <video class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
+            <source src="video/free-loops_Iguazu_Slow_Motion_8.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div id="page">
+        <div class="container-fluid">
+            <div class="row">
+            <h1 id="title">Talent<strong>ANYTHING</strong>.com</h1>
+                <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">
+                    <div class="box">
+                        <div class="send-hidden">
+                            <textarea name="styled-textarea" id="message" placeholder="Don't say, just cool!!"></textarea>
+                        </div>
+                        <hr class="send-hidden">
+                        <div class="send-hidden">
+                            <a class="btn btn-success" style="width: 100%;" id="sure"><strong>ok</strong></a>
+                        </div>
+                        <div class="spinner sending-visible">
+                            <i class="fa fa-spinner fa-pulse"></i>
+                        </div>
+                        <div class="sent-visible">
+                            <p>Message sent! Elizabeth will read your message soon!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        (function(){
+            $(document).ready(function(){
+                $('#sure').click(function(e){
+                    var value = $('#message').val();
+                    if (value) {
+                        $('.box').addClass('sending');
+                        $.ajax({
+                          method: "POST",
+                          url: "talent.php",
+                          data: { message: value }
+                        }).done(function(msg){
+                            $('.box').removeClass('sending');
+                            $('.box').addClass('sent');
+                        });
+                    }
+                });
+            });
+        }());
+    </script>
+</script>
+</body>
+</html>

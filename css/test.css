@@ -1,0 +1,92 @@
+textarea#message {
+    color: #000;
+    width: 100%;
+    height: 120px;
+    border: none;
+    padding: 10px;
+    font-family: Tahoma, sans-serif;
+    /*background-image: url(../images/bg.gif);*/
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+
+html,body{
+  padding:0;
+  margin:0;
+  background-color: #000;
+  color: #fff;
+  height: 100%;
+}
+
+h1#title {
+  font-family: 'Lobster', cursive;
+  letter-spacing: 10px;
+  font-size: 4em;
+  padding-left: 2em;
+  color: #bbb;
+}
+
+#title strong {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
+#page {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.vid-container {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  left: 0;
+  top: 0;
+}
+
+.bgvid{
+  position:absolute;
+  left:0;
+  top:0;
+  min-height: 100vh;
+  min-width: 100vw;
+  filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");
+  -webkit-filter:blur(10px);
+  -ms-filter: blur(10px);
+  -o-filter: blur(10px);
+  filter:blur(10px);
+}
+
+.box{
+  margin-top: calc(50vh - 200px);
+  font-family:Helvetica;
+  color:#fff;
+  background:rgba(0,0,0,0.13);
+  padding: 30px;
+  border-radius: 3px;
+}
+
+.box hr {
+  border-color: rgba(0,0,0,0.13);
+}
+
+.box.sending .send-hidden, .box.sent .send-hidden {
+  display: none;
+}
+
+.box .sent-visible {
+  display: none;
+}
+
+.box .sending-visible {
+  display: none;
+}
+
+.box.sent .sent-visible {
+  display: inline;
+}
+
+.box.sending .sending-visible {
+  display: inline;
+}
